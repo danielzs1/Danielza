@@ -304,7 +304,7 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="carrito_resumen" id="carrito_resumen" value="">
       <input type="hidden" name="_template" value="box">
-      <!-- Si luego creas tu página de gracias, descomenta la siguiente línea -->
+      <!-- (opcional) Si luego creas tu propia página de gracias, descomenta esto -->
       <!-- <input type="hidden" name="_next" value="https://danielzabala.me/gracias.html"> -->
 
       <div style="margin-bottom:10px">
@@ -330,11 +330,6 @@
       <div style="display:flex; gap:10px; align-items:center;">
         <button type="submit" class="cta">Enviar mensaje</button>
         <div class="muted small">O escríbeme por WhatsApp</div>
-      </div>
-
-      <!-- MENSAJE DE ÉXITO -->
-      <div id="success-message" style="display:none; margin-top:10px; color:green; font-weight:600;">
-        ✅ ¡Mensaje enviado correctamente! Gracias por contactarme.
       </div>
     </form>
 
@@ -372,28 +367,12 @@
 
 <!-- SCRIPT DE CONFIRMACIÓN -->
 <script>
-  // Evita el error al enviar y muestra mensaje de éxito
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    // Puedes quitar este preventDefault si quieres que se envíe normalmente
-    e.preventDefault();
-
-    // Simula el envío real a FormSubmit
-    fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this)
-    }).then(response => {
-      if (response.ok) {
-        document.getElementById('success-message').style.display = 'block';
-        this.reset();
-      } else {
-        alert('❌ Ocurrió un error al enviar. Intenta nuevamente.');
-      }
-    }).catch(error => {
-      alert('⚠️ Error de conexión. Por favor, revisa tu red.');
-    });
+  // Antes de enviar, actualizamos el resumen del carrito
+  document.getElementById('contactForm').addEventListener('submit', function() {
+    updateHiddenCart(); // se usa del script general
+    // Dejamos que FormSubmit maneje el envío y redirección
   });
 </script>
-
 
     <!-- FOOTER -->
     <footer>
