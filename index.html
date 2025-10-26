@@ -144,7 +144,7 @@
     <!-- ABOUT -->
     <section id="sobre" class="section">
       <h2 class="section-title">Sobre mí</h2>
-      <p class="lead">Soy Ingeniero Industrial, especialista en Seguridad y Salud en el Trabajo, bilingüe (español–inglés), estudiante de Derecho y portugués. Cuento con experiencia en empresas nacionales y multinacionales, donde he combinado conocimientos técnicos y legales con herramientas digitales para fortalecer la productividad, el cumplimiento normativo y la mejora continua.</p>
+      <p class="lead">Soy Ingeniero Industrial, especialista en Seguridad y Salud en el Trabajo, bilingüe (español-inglés), estudiante de Derecho y portugués. Cuento con experiencia en empresas nacionales y multinacionales, donde he combinado conocimientos técnicos y legales con herramientas digitales para fortalecer la productividad, el cumplimiento normativo y la mejora continua.</p>
 
       <div class="grid-3" style="margin-top:16px">
         <div class="card">
@@ -291,65 +291,109 @@
 
 
     </section>
-    <!-- CONTACT -->
-    <section id="contacto" class="section">
-      <h2 class="section-title">Contacto</h2>
-      <p class="lead">Envíame tu consulta o solicita una cotización. Respondo a la mayor brevedad.</p>
+<!-- CONTACTO -->
+<section id="contacto" class="section">
+  <h2 class="section-title">Contacto</h2>
+  <p class="lead">Envíame tu consulta o solicita una cotización. Respondo a la mayor brevedad.</p>
 
-      <div style="display:grid; grid-template-columns:1fr 380px; gap:16px; margin-top:12px;">
-        <form id="contactForm" class="card" action="https://formsubmit.co/danizabas@gmail.com" method="POST">
-          <!-- Formsubmit.co: la primera vez te enviarán un email de verificación a danizabas@gmail.com.
-               Debes abrir ese email y confirmar para activar el envío. -->
-          <input type="hidden" name="_subject" value="Nueva solicitud - Sitio web Daniel Z." />
-          <input type="hidden" name="_next" value="https://danielzabala.me/gracias.html" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="carrito_resumen" id="carrito_resumen" value="" />
+  <div style="display:grid; grid-template-columns:1fr 380px; gap:16px; margin-top:12px;">
+    <!-- FORMULARIO PRINCIPAL -->
+    <form id="contactForm" class="card" action="https://formsubmit.co/danizabas@gmail.com" method="POST">
+      <!-- Configuración interna -->
+      <input type="hidden" name="_subject" value="Nueva solicitud - Sitio web Daniel Z.">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="carrito_resumen" id="carrito_resumen" value="">
+      <input type="hidden" name="_template" value="box">
+      <!-- Si luego creas tu página de gracias, descomenta la siguiente línea -->
+      <!-- <input type="hidden" name="_next" value="https://danielzabala.me/gracias.html"> -->
 
-          <div style="margin-bottom:10px">
-            <label class="small">Nombre</label>
-            <input type="text" name="Nombre" id="c-name" required />
-          </div>
-
-          <div style="margin-bottom:10px">
-            <label class="small">Correo electrónico</label>
-            <input type="email" name="Email" id="c-email" required />
-          </div>
-
-          <div style="margin-bottom:10px">
-            <label class="small">Teléfono (opcional)</label>
-            <input type="text" name="Telefono" id="c-phone" />
-          </div>
-
-          <div style="margin-bottom:10px">
-            <label class="small">Mensaje</label>
-            <textarea name="Mensaje" id="c-message" required></textarea>
-          </div>
-
-          <div style="display:flex; gap:10px; align-items:center;">
-            <button type="submit" class="cta">Enviar mensaje</button>
-            <div class="muted small">O escríbeme por WhatsApp</div>
-          </div>
-        </form>
-
-        <aside class="card">
-          <div style="font-weight:700">Contacto directo</div>
-          <div class="small muted" style="margin-top:8px">Email: <a href="mailto:danizabas@gmail.com">danizabas@gmail.com</a></div>
-          <div class="small muted" style="margin-top:6px">WhatsApp: <a href="https://wa.me/573016921801" target="_blank" rel="noopener">+57 301 692 1801</a></div>
-
-          <div style="margin-top:14px">
-            <div style="font-weight:700; margin-bottom:6px">Suscríbete</div>
-            <div style="display:flex; gap:8px">
-              <input id="newsletter" placeholder="tu@email.com" />
-              <button id="sub-btn" class="btn-outline">Suscribirme</button>
-            </div>
-            <div class="muted small" style="margin-top:10px">Recibirás recursos y ofertas. Respetamos tu privacidad.</div>
-          </div>
-            <div class="small muted" style="margin-top:6px">
-    LinkedIn: <a href="https://www.linkedin.com/in/daniel-zabala-solano-950a61122" target="_blank" rel="noopener">https://www.linkedin.com/in/daniel-zabala-solano-950a61122</a>
-  </div>
-        </aside>
+      <div style="margin-bottom:10px">
+        <label class="small">Nombre</label>
+        <input type="text" name="Nombre" id="c-name" required>
       </div>
-    </section>
+
+      <div style="margin-bottom:10px">
+        <label class="small">Correo electrónico</label>
+        <input type="email" name="Email" id="c-email" required>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label class="small">Teléfono (opcional)</label>
+        <input type="text" name="Telefono" id="c-phone">
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label class="small">Mensaje</label>
+        <textarea name="Mensaje" id="c-message" required></textarea>
+      </div>
+
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button type="submit" class="cta">Enviar mensaje</button>
+        <div class="muted small">O escríbeme por WhatsApp</div>
+      </div>
+
+      <!-- MENSAJE DE ÉXITO -->
+      <div id="success-message" style="display:none; margin-top:10px; color:green; font-weight:600;">
+        ✅ ¡Mensaje enviado correctamente! Gracias por contactarme.
+      </div>
+    </form>
+
+    <!-- ASIDE CON DATOS DIRECTOS -->
+    <aside class="card">
+      <div style="font-weight:700">Contacto directo</div>
+      <div class="small muted" style="margin-top:8px">
+        Email: <a href="mailto:danizabas@gmail.com">danizabas@gmail.com</a>
+      </div>
+      <div class="small muted" style="margin-top:6px">
+        WhatsApp: <a href="https://wa.me/573016921801" target="_blank" rel="noopener">+57 301 692 1801</a>
+      </div>
+
+      <div style="margin-top:14px">
+        <div style="font-weight:700; margin-bottom:6px">Suscríbete</div>
+        <div style="display:flex; gap:8px">
+          <input id="newsletter" placeholder="tu@email.com">
+          <button id="sub-btn" class="btn-outline">Suscribirme</button>
+        </div>
+        <div class="muted small" style="margin-top:10px">
+          Recibirás recursos y ofertas. Respetamos tu privacidad.
+        </div>
+      </div>
+
+      <div class="small muted" style="margin-top:10px">
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/daniel-zabala-solano-950a61122"
+           target="_blank" rel="noopener">
+          daniel-zabala-solano-950a61122
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- SCRIPT DE CONFIRMACIÓN -->
+<script>
+  // Evita el error al enviar y muestra mensaje de éxito
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    // Puedes quitar este preventDefault si quieres que se envíe normalmente
+    e.preventDefault();
+
+    // Simula el envío real a FormSubmit
+    fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this)
+    }).then(response => {
+      if (response.ok) {
+        document.getElementById('success-message').style.display = 'block';
+        this.reset();
+      } else {
+        alert('❌ Ocurrió un error al enviar. Intenta nuevamente.');
+      }
+    }).catch(error => {
+      alert('⚠️ Error de conexión. Por favor, revisa tu red.');
+    });
+  });
+</script>
+
 
     <!-- FOOTER -->
     <footer>
